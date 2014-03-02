@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Links sheet</name>
+    <events>
+        <event-block disabled="1" sid="8271153520767872">
+            <conditions>
+                <condition disabled="1" id="7" name="Cursor is over object" sid="6329822062408565" type="Mouse">
+                    <param id="0" name="Object">Links</param>
+                </condition>
+                <condition disabled="1" id="-7" name="Compare instance variable" sid="3996554743435431" type="Links">
+                    <param id="0" name="Instance variable">url</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set cursor style" sid="6427102026724309" type="Mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="2235946962874899">
+            <conditions>
+                <condition disabled="1" id="7" inverted="1" name="Cursor is over object" sid="2254120291378647" type="Mouse">
+                    <param id="0" name="Object">Links</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set cursor style" sid="5341837732724134" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

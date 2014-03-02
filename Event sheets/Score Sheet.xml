@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Score Sheet</name>
+    <events>
+        <variable constant="0" name="NextLevel" sid="634856869319639" static="0" type="text"></variable>
+        <variable constant="0" name="ScoreD" sid="5304246400434408" static="0" type="number">0</variable>
+        <variable constant="0" name="Score" sid="6440256927214203" static="0" type="number">0</variable>
+        <include>Buttons Sheet</include>
+        <include>Fading Sheet</include>
+        <event-group collapsed="1" description="" sid="5620922457290884" title="HEARTS">
+            <sub-events>
+                <event-block sid="4808487892228945">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="276991949483725" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="983714270671997" type="ScoreCongrats">
+                            <param id="0" name="Frame number">StarsCollected</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8602617954015658">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9572962709175469" type="System">
+                                    <param id="0" name="Variable">StarsCollected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="4572165454587743">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9047954974415738" type="System">
+                                    <param id="0" name="Variable">StarsCollected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9181478798939962">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5642554373325239" type="ScoreStarCollected">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Set speed" sid="9265576122075672" type="ScoreStarCollected">
+                                            <param id="0" name="Speed">30</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="9606657952146124" type="ScoreStarCollected">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1161901977154176">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="4361547800675204" type="System">
+                                            <param id="0" name="Variable">SoundsEnabled</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="6333637988673156" type="Audio">
+                                            <param id="0" name="Audio file">Pizzicato1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;SOUNDS&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6540831778018643">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1125593031469969" type="System">
+                                    <param id="0" name="Variable">StarsCollected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="8785982817329576">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="1420208329959562" type="ScoreStarCollected">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Set speed" sid="3874409228044741" type="ScoreStarCollected">
+                                            <param id="0" name="Speed">30</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="6364445046074383" type="ScoreStarCollected">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="7058380289929833">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="1609316070200966" type="System">
+                                                    <param id="0" name="Variable">SoundsEnabled</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="8468890510798507" type="Audio">
+                                                    <param id="0" name="Audio file">Pizzicato1</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SOUNDS&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="7016858290434939">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="782913541502837" type="ScoreStarCollected">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="6174463859232541" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="6" name="Set speed" sid="2602303754936097" type="ScoreStarCollected">
+                                            <param id="0" name="Speed">30</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="3756913427184108" type="ScoreStarCollected">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="5621440877055387" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="7368359535092818">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="4701827858553096" type="System">
+                                                    <param id="0" name="Variable">SoundsEnabled</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="3216946695724197" type="Audio">
+                                                    <param id="0" name="Audio file">Pizzicato1</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SOUNDS&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2700573584089141">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="214270363977124" type="System">
+                                    <param id="0" name="Variable">StarsCollected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="8251789519796363">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="1959576684808047" type="ScoreStarCollected">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Set speed" sid="5516454701515365" type="ScoreStarCollected">
+                                            <param id="0" name="Speed">30</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="5168386045180962" type="ScoreStarCollected">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="7075077832733774">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="1833186709300923" type="System">
+                                                    <param id="0" name="Variable">SoundsEnabled</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="97733676752855" type="Audio">
+                                                    <param id="0" name="Audio file">Pizzicato1</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SOUNDS&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="2449552358881997">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9989553415671154" type="ScoreStarCollected">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="640962909022808" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="6" name="Set speed" sid="649835140056811" type="ScoreStarCollected">
+                                            <param id="0" name="Speed">30</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="6370375214098519" type="ScoreStarCollected">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="1675645759733872">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="7402883765394914" type="System">
+                                                    <param id="0" name="Variable">SoundsEnabled</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="9214617776407709" type="Audio">
+                                                    <param id="0" name="Audio file">Pizzicato1</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SOUNDS&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="8536272272075056">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5427290258148918" type="ScoreStarCollected">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="6418513616773208" type="System">
+                                            <param id="0" name="Seconds">1</param>
+                                        </action>
+                                        <action id="6" name="Set speed" sid="3196648226348732" type="ScoreStarCollected">
+                                            <param id="0" name="Speed">30</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="729367926277375" type="ScoreStarCollected">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="6495346917822529">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="4191658052021671" type="System">
+                                                    <param id="0" name="Variable">SoundsEnabled</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="3523962008254387" type="Audio">
+                                                    <param id="0" name="Audio file">Pizzicato1</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SOUNDS&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="4663783325487797" title="STUFF">
+            <sub-events>
+                <event-block sid="9270428340017421">
+                    <conditions>
+                        <condition id="1" name="On any click" sid="6199671402286863" type="Mouse" />
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="9148112007153572">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="6562320123499511" type="System" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="3" name="Set at XY" sid="4946614888172062" type="LevelsUnlocked">
+                            <param id="0" name="X">int(left(LevelPlaying,1))</param>
+                            <param id="1" name="Y">int(right(LevelPlaying,1))+1</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7383846872268217" type="System">
+                            <param id="0" name="Variable">FadeIn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7388248076759529" type="System">
+                            <param id="0" name="Variable">TotalStarsCollected</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="202700962945689">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="2717556874546955" type="LevelsUnlocked">
+                                    <param id="0" name="Axes">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1134796129221238">
+                                    <conditions>
+                                        <condition id="4" name="Compare current value" sid="7318987010653508" type="LevelsUnlocked">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Value">10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="4394899235223221" type="System">
+                                            <param id="0" name="Variable">TotalStarsCollected</param>
+                                            <param id="1" name="Value">LevelsUnlocked.CurValue-10</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="246254111982314">
+                            <conditions />
+                            <actions>
+                                <action id="-10" name="Add to" sid="185156626915196" type="System">
+                                    <param id="0" name="Variable">TotalStarsCollected</param>
+                                    <param id="1" name="Value">StarsCollected</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9804899167803815">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5294588491719636" type="System">
+                                    <param id="0" name="First value">int(right(LevelPlaying,1))</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set at XY" sid="8455501409719955" type="LevelsUnlocked">
+                                    <param id="0" name="X">int(left(LevelPlaying,1))</param>
+                                    <param id="1" name="Y">int(right(LevelPlaying,1))+1</param>
+                                    <param id="2" name="Value">10</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="3187758963285025" type="LevelsUnlocked">
+                                    <param id="0" name="X">int(left(LevelPlaying,1))</param>
+                                    <param id="1" name="Y">int(right(LevelPlaying,1))</param>
+                                    <param id="2" name="Value">10 + StarsCollected</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3387144457501866" type="System">
+                                    <param id="0" name="Variable">NextLevel</param>
+                                    <param id="1" name="Value">str(left(LevelPlaying,1)) &amp; &quot;-&quot; &amp; str(int(right(LevelPlaying,1))+1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4010132776078138">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1538874033580299" type="System">
+                                    <param id="0" name="First value">int(right(LevelPlaying,1))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="3" name="Set at XY" sid="8955030169871906" type="LevelsUnlocked">
+                                    <param id="0" name="X">int(left(LevelPlaying,1))+1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">10</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="2202807188067532" type="LevelsUnlocked">
+                                    <param id="0" name="X">int(left(LevelPlaying,1))</param>
+                                    <param id="1" name="Y">int(right(LevelPlaying,1))</param>
+                                    <param id="2" name="Value">10 + StarsCollected</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="6468332691894597" type="System">
+                                    <param id="0" name="Variable">NextLevel</param>
+                                    <param id="1" name="Value">str(int(left(LevelPlaying,1))+1)  &amp; &quot;-&quot; &amp; &quot;1&quot; </param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8624147398806278">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="5980444948550913" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">RetryButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-25" name="Go to layout (by name)" sid="8843061792679627" type="System">
+                            <param id="0" name="Layout">LevelPlaying</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6276715086747801" type="System">
+                            <param id="0" name="Variable">NextLayout</param>
+                            <param id="1" name="Value">str(LevelPlaying)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3527557843983261" type="System">
+                            <param id="0" name="Variable">FadeOut</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2094067083646489">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="642882542666472" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">NextButton2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-25" name="Go to layout (by name)" sid="5369751657225804" type="System">
+                            <param id="0" name="Layout">NextLevel</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="224687048406484">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="979696579140357" type="System">
+                                    <param id="0" name="First value">NextLevel</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;2-1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1166285809801775">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="2664872156853143" type="System">
+                                            <param id="0" name="Variable">TotalStarsCollected</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="3194316326616022" type="System">
+                                            <param id="0" name="Variable">NextLayout</param>
+                                            <param id="1" name="Value">NextLevel</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="216867907568217" type="System">
+                                            <param id="0" name="Variable">FadeOut</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7274270063072391">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="6075962458879387" type="System">
+                                            <param id="0" name="Variable">TotalStarsCollected</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="7775316745414084" type="System">
+                                            <param id="0" name="Variable">NextLayout</param>
+                                            <param id="1" name="Value">&quot;Selector Layout&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="929893331865756" type="System">
+                                            <param id="0" name="Variable">WorldPlaying</param>
+                                            <param id="1" name="Value">int(left(LevelPlaying,1))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3096578378473742" type="System">
+                                            <param id="0" name="Variable">FadeOut</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="101358860982253">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="8106526350705558" type="System">
+                                    <param id="0" name="First value">NextLevel</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;2-1&quot;</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="7769418135367229" type="System">
+                                    <param id="0" name="First value">NextLevel</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;3-1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4666315387691176" type="System">
+                                    <param id="0" name="Variable">NextLayout</param>
+                                    <param id="1" name="Value">str(NextLevel)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="4485304376473104" type="System">
+                                    <param id="0" name="Variable">FadeOut</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1395420781965494">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9993923213890189" type="System">
+                                    <param id="0" name="First value">NextLevel</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;3-1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9864531412554397" type="System">
+                                    <param id="0" name="Variable">NextLayout</param>
+                                    <param id="1" name="Value">&quot;GameOver&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9488800911220139" type="System">
+                                    <param id="0" name="Variable">FadeOut</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4288792010952268">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="4896508071134804" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">SelectorButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-2" name="Go to layout" sid="9136609798723028" type="System">
+                            <param id="0" name="Layout">Selector Layout</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1226656019851684" type="System">
+                            <param id="0" name="Variable">NextLayout</param>
+                            <param id="1" name="Value">&quot;Selector Layout&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6334726851245872" type="System">
+                            <param id="0" name="Variable">WorldPlaying</param>
+                            <param id="1" name="Value">int(left(LevelPlaying,1))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="482900006743184" type="System">
+                            <param id="0" name="Variable">FadeOut</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="380349053050005" title="SCORE">
+            <sub-events>
+                <variable constant="0" name="World" sid="6748268612005875" static="0" type="number">0</variable>
+                <variable constant="0" name="Level" sid="176618329940515" static="0" type="number">0</variable>
+                <variable constant="0" name="Stars" sid="2805513176987869" static="0" type="number">0</variable>
+                <variable constant="0" name="Rotations" sid="330684427759659" static="0" type="number">0</variable>
+                <variable constant="0" name="Tries" sid="3902392186995096" static="0" type="number">0</variable>
+                <variable constant="0" name="Seconds" sid="3398514838987913" static="0" type="number">0</variable>
+                <event-block sid="7314717374953334">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="6024919144248444" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1115821001525884" type="System">
+                            <param id="0" name="Variable">World</param>
+                            <param id="1" name="Value">int(left(LevelPlaying,1))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4626069170318733" type="System">
+                            <param id="0" name="Variable">Level</param>
+                            <param id="1" name="Value">int(right(LevelPlaying,1))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7682692097176662" type="System">
+                            <param id="0" name="Variable">Stars</param>
+                            <param id="1" name="Value">StarsCollected</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9470196333681028" type="System">
+                            <param id="0" name="Variable">Rotations</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2496435495682516" type="System">
+                            <param id="0" name="Variable">Tries</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4478814873937463" type="System">
+                            <param id="0" name="Variable">Seconds</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1288459912649008" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">round(exp(World)*100)*World*Level*(Stars+1)-((Seconds*10+Rotations*5+Tries*4)*World*Level)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7383257228491733" type="ScoreDisplay">
+                            <param id="0" name="Text">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4762126295831395">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="52190558123844" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">ScoreD</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="2791867742802598" type="System">
+                            <param id="0" name="Variable">ScoreD</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="2154234798540291">
+                    <conditions>
+                        <condition disabled="1" id="-1" name="Every tick" sid="640271714795565" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="873088390501505">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="9947208701539414" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="7761164830475118" type="ScoreDisplay">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; ScoreD</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

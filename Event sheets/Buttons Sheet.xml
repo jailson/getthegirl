@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Buttons Sheet</name>
+    <events>
+        <event-block sid="5370586218475201">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="8147250298397291" type="Mouse">
+                    <param id="0" name="Object">Buttons</param>
+                </condition>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="938754622644151" type="Mouse">
+                    <param id="0" name="Object">SelectorLevelButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1800555776366398" type="Sprite7">
+                    <param id="0" name="Animation">&quot;Hand&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9322536256689215">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="7354164418680712" type="Mouse">
+                    <param id="0" name="Object">SelectorLevelButton</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="7802268527794678" type="SelectorLevelButton">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Number">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="345467323180179" type="Sprite7">
+                    <param id="0" name="Animation">&quot;Hand&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8082320787473664">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="7852393832254024" type="Mouse">
+                    <param id="0" name="Object">Buttons</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="41148293124308" type="Sprite7">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2536221915071721">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="7966012771371649" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Buttons</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9654138927017254">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5767139402465477" type="System">
+                            <param id="0" name="Variable">SoundsEnabled</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="494922516170977" type="Audio">
+                            <param id="0" name="Audio file">OK - 1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;SOUNDS&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1457198242038378">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5242875045133929" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="7779720381546733" type="System">
+                    <param id="0" name="Object to create">Sprite7</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4966558441734372">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6805904706623351" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="7733399309884343" type="Mouse">
+                    <param id="0" name="Cursor style">7</param>
+                </action>
+                <action id="-3" name="Set position" sid="5455659051111097" type="Sprite7">
+                    <param id="0" name="X">Mouse.AbsoluteX</param>
+                    <param id="1" name="Y">Mouse.AbsoluteY</param>
+                </action>
+                <action id="-24" name="Move to top" sid="3952457861585544" type="Sprite7" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

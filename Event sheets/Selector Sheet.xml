@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Selector Sheet</name>
+    <events>
+        <variable constant="0" name="TotalStarsCollected" sid="1995118193627477" static="0" type="number">0</variable>
+        <variable constant="0" name="NextWorldPosition" sid="8699871110308235" static="0" type="number">300</variable>
+        <variable constant="0" name="WorldPlaying" sid="4516250958536248" static="0" type="number">1</variable>
+        <variable constant="0" name="BlockWidth" sid="3785304395736116" static="0" type="number">70</variable>
+        <include>Buttons Sheet</include>
+        <include>Fading Sheet</include>
+        <event-group description="" sid="747502516707281" title="WORLD SELECTORS">
+            <sub-events>
+                <event-block sid="8842285950680174">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="2284746232355543" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">NextButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9314718163369041" type="System">
+                            <param id="0" name="Variable">NextWorldPosition</param>
+                            <param id="1" name="Value"> (WindowWidth/2) + (NextButton.WorldDestination-1)*WindowWidth+BlockWidth*(NextButton.WorldDestination-1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7716758491639538">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="3628377860059327" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">BackButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4617729932774601" type="System">
+                            <param id="0" name="Variable">NextWorldPosition</param>
+                            <param id="1" name="Value"> (WindowWidth/2) + (BackButton.WorldDestination-1)*WindowWidth+BlockWidth*(BackButton.WorldDestination-1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9681314025936803">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="660031365682354" type="System">
+                            <param id="0" name="First value">scrollx</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">NextWorldPosition</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Scroll to X" sid="8403227408486925" type="System">
+                            <param id="0" name="X">scrollx + 20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5674937703203535">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6227966751937831" type="System">
+                            <param id="0" name="First value">scrollx</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">NextWorldPosition</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Scroll to X" sid="543238878642646" type="System">
+                            <param id="0" name="X">scrollx - 20</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="8063282268940943" title="LEVEL SELECTORS">
+            <sub-events>
+                <event-block sid="9256770129044098">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="9403259750589971" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">SelectorLevelButton</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="9981083260415788" type="SelectorLevelButton">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-25" name="Go to layout (by name)" sid="7395039284068545" type="System">
+                            <param id="0" name="Layout">SelectorLevelButton.World &amp; &quot;-&quot; &amp; SelectorLevelButton.Level</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7495735488771827" type="System">
+                            <param id="0" name="Variable">NextLayout</param>
+                            <param id="1" name="Value">SelectorLevelButton.World &amp; &quot;-&quot; &amp; SelectorLevelButton.Level</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4083120561492747" type="System">
+                            <param id="0" name="Variable">FadeOut</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7016576511718641">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="931261012942637" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">SelectorButton</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="1407404888018664" type="SelectorLevelButton">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-2" name="Go to layout" sid="9367524667663888" type="System">
+                            <param id="0" name="Layout">MainMenu</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8046588702928724" type="System">
+                            <param id="0" name="Variable">NextLayout</param>
+                            <param id="1" name="Value">&quot;MainMenu&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8611160270848033" type="System">
+                            <param id="0" name="Variable">FadeOut</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="CurrentWorld" sid="1767453259015383" static="0" type="number">1</variable>
+                <variable constant="0" name="CurrentLevel" sid="2447579951243283" static="0" type="number">1</variable>
+                <event-block sid="6645993237399366">
+                    <conditions>
+                        <condition id="-10" name="For" sid="6178501862459545" type="System">
+                            <param id="0" name="Name">&quot;World Loop&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4673363116313045" type="System">
+                            <param id="0" name="Variable">CurrentWorld</param>
+                            <param id="1" name="Value">loopindex</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="243313014560399">
+                            <conditions>
+                                <condition id="-10" name="For" sid="4420826063405509" type="System">
+                                    <param id="0" name="Name">&quot;Levels Loop&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2338175934216108" type="System">
+                                    <param id="0" name="Variable">CurrentLevel</param>
+                                    <param id="1" name="Value">loopindex</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="8882659786985357">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="1014540604645019" type="LevelsUnlocked">
+                                            <param id="0" name="X">CurrentWorld</param>
+                                            <param id="1" name="Y">CurrentLevel</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="1629711539463595" type="SelectorLevelButton">
+                                            <param id="0" name="Instance variable">World</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">CurrentWorld</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="8981336277676979" type="SelectorLevelButton">
+                                            <param id="0" name="Instance variable">Level</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">CurrentLevel</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3029623496503429" type="StarsAtSelector">
+                                            <param id="0" name="Instance variable">Level</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">CurrentLevel</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="5794600117759495" type="StarsAtSelector">
+                                            <param id="0" name="Instance variable">World</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">CurrentWorld</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="4600313635476605" type="StarsAtSelector">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="5692516346452673" type="SelectorLevelButton">
+                                            <param id="0" name="Frame number">CurrentLevel</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="3068525538787281" type="StarsAtSelector">
+                                            <param id="0" name="Frame number">LevelsUnlocked.At(CurrentWorld,CurrentLevel)-10</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1705765434689367">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7775433901440263" type="SelectorLevelButton">
+                            <param id="0" name="Instance variable">Level</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4081084255818295" type="SelectorLevelButton">
+                            <param id="0" name="Instance variable">World</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8426222019548901" type="System">
+                            <param id="0" name="Variable">WorldPlaying</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="8365969549955108" type="StarsAtSelector">
+                            <param id="0" name="Instance variable">World</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="5510886604011252" type="StarsAtSelector">
+                            <param id="0" name="Instance variable">Level</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="4953333105117148" type="StarsAtSelector">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="1129077077282508" type="SelectorLevelButton">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action disabled="1" id="3" name="Set at XY" sid="141636667103763" type="LevelsUnlocked">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="3157815491052607" title="SCORE">
+            <sub-events>
+                <event-block sid="913037505327278">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="998895614890416" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4851185784793284" type="TotalStarsCollectedDisplay">
+                            <param id="0" name="Text">TotalStarsCollected</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9647550931980356" type="StarsAtSelector">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="8673859210226813">
+                            <conditions>
+                                <condition disabled="1" id="3" name="For each element" sid="950092421750423" type="LevelsUnlocked">
+                                    <param id="0" name="Axes">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="3119516058344192">
+                                    <conditions>
+                                        <condition disabled="1" id="4" name="Compare current value" sid="281999549767868" type="LevelsUnlocked">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Value">10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action disabled="1" id="-10" name="Add to" sid="192563182246472" type="System">
+                                            <param id="0" name="Variable">TotalStarsCollected</param>
+                                            <param id="1" name="Value">LevelsUnlocked.CurValue-10</param>
+                                        </action>
+                                        <action disabled="1" id="0" name="Set text" sid="5209366741081748" type="TotalStarsCollectedDisplay">
+                                            <param id="0" name="Text">TotalStarsCollected</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="9869316793857534">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1439990710987903" type="System">
+                    <param id="0" name="Variable">TotalStarsCollected</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">20</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="9854153437060894" type="SelectorLevelButton">
+                    <param id="0" name="Instance variable">World</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="548736911889008" type="SelectorLevelButton">
+                    <param id="0" name="Instance variable">Level</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="3300267216528802" type="WorldRequirementDisplay">
+                    <param id="0" name="Instance variable">World</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="7904838322863272" type="SelectorLevelButton">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4548997975056551" type="WorldRequirementDisplay" />
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="7595808314448404">
+            <conditions>
+                <condition disabled="1" id="-14" name="Compare variable" sid="1723587240434315" type="System">
+                    <param id="0" name="Variable">TotalStarsCollected</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">50</param>
+                </condition>
+                <condition disabled="1" id="-7" name="Compare instance variable" sid="3120811155030771" type="SelectorLevelButton">
+                    <param id="0" name="Instance variable">World</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+                <condition disabled="1" id="-7" name="Compare instance variable" sid="9715682299409126" type="SelectorLevelButton">
+                    <param id="0" name="Instance variable">Level</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition disabled="1" id="-7" name="Compare instance variable" sid="8115855775508882" type="WorldRequirementDisplay">
+                    <param id="0" name="Instance variable">World</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="5" name="Set frame" sid="1223392576348376" type="SelectorLevelButton">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action disabled="1" id="-9" name="Destroy" sid="1209026951902055" type="WorldRequirementDisplay" />
+            </actions>
+        </event-block>
+        <event-block sid="252172350244616">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3305139225813865" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5656660351041236" type="System">
+                    <param id="0" name="Variable">FadeIn</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-5" name="Scroll to X" sid="8681754700304245" type="System">
+                    <param id="0" name="X"> (WindowWidth/2) + (WorldPlaying-1)*WindowWidth+BlockWidth*(WorldPlaying-1)</param>
+                </action>
+                <action id="-9" name="Set value" sid="6082854634203926" type="System">
+                    <param id="0" name="Variable">NextWorldPosition</param>
+                    <param id="1" name="Value"> (WindowWidth/2) + (WorldPlaying-1)*WindowWidth+BlockWidth*(WorldPlaying-1)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

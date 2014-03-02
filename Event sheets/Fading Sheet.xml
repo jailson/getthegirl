@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Fading Sheet</name>
+    <events>
+        <variable constant="0" name="NextLayout" sid="2392424603586188" static="0" type="text"></variable>
+        <variable constant="0" name="FadeOut" sid="8913462873664727" static="0" type="number">0</variable>
+        <variable constant="0" name="FadeIn" sid="5955092903613786" static="0" type="number">0</variable>
+        <variable constant="0" name="Fading" sid="4636031184618851" static="0" type="number">0</variable>
+        <variable constant="0" name="Modal" sid="6527840692035914" static="0" type="number">0</variable>
+        <event-block sid="1696787572582781">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9547219077331293" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="155700314863733" type="System">
+                    <param id="0" name="First value">FadeIn</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+                <condition id="-10" name="Compare opacity" sid="4882962679704638" type="BlackMatte">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Opacity">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="3726520619115937" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="8294791191107405" type="BlackMatte">
+                    <param id="0" name="Opacity">BlackMatte.Opacity/4-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="218248145688956">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="423250850303749" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="5075555411686866" type="System">
+                    <param id="0" name="First value">FadeOut</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+                <condition id="-10" name="Compare opacity" sid="6986450432107868" type="BlackMatte">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Opacity">100</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="1038351414398784" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="3973518157233887" type="BlackMatte">
+                    <param id="0" name="Opacity">(BlackMatte.Opacity+1)*4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7512742228921104">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="6810046692754244" type="BlackMatte">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="Opacity">0</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="9413449590130895" type="System">
+                    <param id="0" name="First value">FadeIn</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8662057233623628" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4572424570940932" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="1017403373314905" type="System">
+                    <param id="0" name="Variable">FadeIn</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4656003507480315" type="BlackMatte" />
+            </actions>
+        </event-block>
+        <event-block sid="2748374855278975">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="4227889272155662" type="BlackMatte">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Opacity">100</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="9938532604227754" type="System">
+                    <param id="0" name="First value">FadeOut</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8367497828086366" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6192654355091218" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="6698172309489496" type="System">
+                    <param id="0" name="Variable">FadeOut</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6212572836244787" type="BlackMatte" />
+                <action id="-25" name="Go to layout (by name)" sid="6258481345530175" type="System">
+                    <param id="0" name="Layout">NextLayout</param>
+                </action>
+                <action id="-9" name="Set value" sid="9182535604006605" type="System">
+                    <param id="0" name="Variable">NextLayout</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7072588239021797">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="6399545009548454" type="System">
+                    <param id="0" name="First value">FadeIn</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5528144629180421" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8369617911142205" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-3" name="Create object" sid="738930530826783" type="System">
+                    <param id="0" name="Object to create">BlackMatte</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="-7" name="Set size" sid="3346503124896872" type="BlackMatte">
+                    <param id="0" name="Width">LayoutWidth</param>
+                    <param id="1" name="Height">LayoutHeight</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="5689856536727644" type="BlackMatte">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="825115504106901" type="System">
+                    <param id="0" name="Variable">Modal</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2209828431466204">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="3713086544650056" type="System">
+                    <param id="0" name="First value">FadeOut</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8668856994970284" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="3825024444681188" type="System">
+                    <param id="0" name="Variable">Fading</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-3" name="Create object" sid="6682629359427853" type="System">
+                    <param id="0" name="Object to create">BlackMatte</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="6591431359609929" type="BlackMatte">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="-7" name="Set size" sid="4504414078777794" type="BlackMatte">
+                    <param id="0" name="Width">LayoutWidth</param>
+                    <param id="1" name="Height">LayoutHeight</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1070241599811099">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3949047228842153" type="System">
+                    <param id="0" name="Variable">Modal</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="8659858934101408" type="Modal">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8980806655784054">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9191413958952671" type="System">
+                    <param id="0" name="Variable">Modal</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="1364443280234405" type="Modal">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

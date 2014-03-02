@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MainMenu Sheet</name>
+    <events>
+        <variable constant="0" name="NextMenuPosition" sid="8101981001585586" static="0" type="number">960</variable>
+        <include>Fading Sheet</include>
+        <include>Buttons Sheet</include>
+        <variable constant="0" name="SoundsEnabled" sid="4275461783333464" static="0" type="number">1</variable>
+        <event-group description="" sid="678247680707389" title="SETUP">
+            <sub-events>
+                <event-block sid="633786351713315">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="6625019791992627" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Preload" sid="4069589491905328" type="Audio">
+                            <param id="0" name="Audio file">Pizzicato1</param>
+                        </action>
+                        <action id="4" name="Preload" sid="4983015097980805" type="Audio">
+                            <param id="0" name="Audio file">Scratch2</param>
+                        </action>
+                        <action id="4" name="Preload" sid="497840624619066" type="Audio">
+                            <param id="0" name="Audio file">Alert1</param>
+                        </action>
+                        <action id="4" name="Preload" sid="3341054995294284" type="Audio">
+                            <param id="0" name="Audio file">OK - 1</param>
+                        </action>
+                        <action id="4" name="Preload" sid="259048409069047" type="Audio">
+                            <param id="0" name="Audio file">OooScary1</param>
+                        </action>
+                        <action id="0" name="Play" sid="6614819269957639" type="Audio">
+                            <param id="0" name="Audio file">Scheming Weasel faster 01 loop</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;SoundTrack&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2573887790326053" type="System">
+                            <param id="0" name="Variable">FadeIn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-5" name="Scroll to X" sid="8880027325082672" type="System">
+                            <param id="0" name="X">NextMenuPosition</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8986225765587575">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8435279810058745" type="System">
+                            <param id="0" name="First value">scrollx</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">NextMenuPosition</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Scroll to X" sid="4289817219801868" type="System">
+                            <param id="0" name="X">scrollx+25</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="204149560527872">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4775633712915314" type="System">
+                            <param id="0" name="First value">scrollx</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">NextMenuPosition</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Scroll to X" sid="693789702704648" type="System">
+                            <param id="0" name="X">scrollx-25</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="5260391063658221" title="PLAY BUTTON">
+            <sub-events>
+                <event-block sid="3343791684105685">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="5136453580483583" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">PlayButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-2" name="Go to layout" sid="9321855394066411" type="System">
+                            <param id="0" name="Layout">Selector Layout</param>
+                        </action>
+                        <action disabled="1" id="-21" name="Reset global variables" sid="8537165552754432" type="System" />
+                        <action id="-9" name="Set value" sid="1713148246410935" type="System">
+                            <param id="0" name="Variable">NextLayout</param>
+                            <param id="1" name="Value">&quot;Selector Layout&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="447967214194278" type="System">
+                            <param id="0" name="Variable">FadeOut</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="2782054150845898" title="MUSIC BUTTON">
+            <sub-events>
+                <event-block sid="7543751589841948">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="5691291029441487" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">MusicButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Toggle boolean" sid="7194105612518266" type="MusicButton">
+                            <param id="0" name="Instance variable">Enabled</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9419123397505546">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="6921730836659883" type="MusicButton">
+                            <param id="0" name="Instance variable">Enabled</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="4162062902214903" type="MusicButton">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="8246008198465847" type="Audio">
+                            <param id="0" name="Tag">&quot;SoundTrack&quot;</param>
+                            <param id="1" name="dB">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7559741389900803">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1785709731914164" type="MusicButton">
+                            <param id="0" name="Instance variable">Enabled</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="906655470501824" type="MusicButton">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="3753475596749159" type="Audio">
+                            <param id="0" name="Tag">&quot;SoundTrack&quot;</param>
+                            <param id="1" name="dB">-200</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="4553721126743445" title="SOUNDS BUTTON">
+            <sub-events>
+                <event-block sid="1009016029510608">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="5961612898848389" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">SoundsButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Toggle boolean" sid="2816587272298318" type="SoundsButton">
+                            <param id="0" name="Instance variable">Enabled</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7684935468951084">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="9003151109838825" type="SoundsButton">
+                            <param id="0" name="Instance variable">Enabled</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="3017884444458527" type="SoundsButton">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action disabled="1" id="3" name="Set volume" sid="7433182303196344" type="Audio">
+                            <param id="0" name="Tag">&quot;SOUNDS&quot;</param>
+                            <param id="1" name="dB">-6</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6628276617618669" type="System">
+                            <param id="0" name="Variable">SoundsEnabled</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9857852062335327">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3907221637440267" type="SoundsButton">
+                            <param id="0" name="Instance variable">Enabled</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="5501590679775613" type="SoundsButton">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action disabled="1" id="3" name="Set volume" sid="6049546682089255" type="Audio">
+                            <param id="0" name="Tag">&quot;SOUNDS&quot;</param>
+                            <param id="1" name="dB">-200</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1197963566888675" type="System">
+                            <param id="0" name="Variable">SoundsEnabled</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2705609609415951" title="CREDITS BUTTON">
+            <sub-events>
+                <event-block sid="1864668825472304">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="392861197316609" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">CreditsButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2681295985168989" type="System">
+                            <param id="0" name="Variable">NextMenuPosition</param>
+                            <param id="1" name="Value">1600</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="9217509605313681" title="OPTIONS BUTTON">
+            <sub-events>
+                <event-block sid="3717812690102183">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="1918114150662675" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">OptionsButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4150783909503399" type="System">
+                            <param id="0" name="Variable">NextMenuPosition</param>
+                            <param id="1" name="Value">320</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="3620228051048205" title="BACK BUTTONS">
+            <sub-events>
+                <event-block sid="8985095206493591">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="9751429976203715" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">NextButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3193518575275052" type="System">
+                            <param id="0" name="Variable">NextMenuPosition</param>
+                            <param id="1" name="Value">960</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7837605757439671">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="7586730231027542" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">BackButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5656324908861366" type="System">
+                            <param id="0" name="Variable">NextMenuPosition</param>
+                            <param id="1" name="Value">960</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
